@@ -15,6 +15,7 @@ int main(void)
 		putchar(i);
 		i++;
 	}
+	putchar(1);
 
 	return (0);
 }
