@@ -8,24 +8,25 @@
 
 int main(void)
 {
-	int digit1, digit2;
+	int tens;
 
-	for (digit1 = 0; digit1 < 10; digit1++)
-	{
-		for (digit2 = 0; digit2 < 10; digit2++)
+	int ones;
+
+		for (tens = 0; tens <= 9; tens++)
 		{
-			putchar((digit1 % 10) + '0');
-			putchar((digit2 % 10) + '0');
+		for (ones = 0; ones <= 9; ones++)
+	{
+		putchar(tens + '0');
+		putchar(ones + '0');
 
-			if (digit1 == 9 && digit2 == 9)
-				continue;
+		if (!(tens == 9 && ones == 9))
 
 			putchar(',');
 			putchar(' ');
 		}
 	}
+}
+putchar('\n');
 
-	putchar('\n');
-
-	return (0);
+return (0);
 }
