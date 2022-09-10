@@ -8,21 +8,24 @@
 
 int main(void)
 {
-	int tens;
+	int a;
 
-	int ones;
+	int b;
 
-		for (tens = 0; tens <= 9; tens++)
-		{
-		for (ones = 0; ones <= 9; ones++)
+	for (a = 48; a < 58; a += 1)
 	{
-		putchar(tens + '0');
-		putchar(ones + '0');
-
-		if (!(tens == 9 && ones == 9))
-
-			putchar(',');
-			putchar(' ');
+		for (b = 48; b < 58; b += 1)
+		{
+			if (a != b && a < b)
+		{
+			putchar(a);
+			putchar(b);
+		if (a == 56 && b == 57)
+		{
+			break;
+		}
+		putchar(',');
+		putchar(' ');
 		}
 	}
 }
