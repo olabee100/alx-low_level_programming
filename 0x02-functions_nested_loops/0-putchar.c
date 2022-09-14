@@ -1,4 +1,5 @@
 #include "main.h"
+#include "_putchar.c"
 
 /**
  * main -Entry point
@@ -15,6 +16,7 @@ int main(void)
 	{
 		_putchar(p[i]);
 	}
+
 	_putchar('\n');
 	return (0);
 }
