@@ -9,7 +9,7 @@
 int main(void)
 {
 	int i;
-	char p[] = "MAIN";
+	char p[] = "_putchar";
 
 	for (i = 0; i < 9; i++)
 	{
