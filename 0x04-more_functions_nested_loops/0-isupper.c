@@ -7,7 +7,7 @@
  * Return: Always 0.
  */
 
-int _isupper(int c)
+int main(void)
 {
 	if (c >= 'A' && c <= 'Z')
 	{
