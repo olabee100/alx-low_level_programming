@@ -1,43 +1,49 @@
-#include "main.h"
 #include <stdlib.h>
+
 /**
- * *argstostr - concatenates all arguements to the program
- * @ac: arguement count
- * @av: pointer to arguements
- * Return: pointer to new space in memory or null
- **/
+ * argstostr - a function that concatenates
+ *             all the arguments
+ *
+ * @ac: argument counter
+ * @av: argument holder
+ *
+ * Return: a pointer to a new string
+ *         or NULL if it fails
+ */
+
 char *argstostr(int ac, char **av)
 {
-	char *strDup;
-	int i, j, k, size;
+	int i, j, k, length;
+	char *str;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	size = 0;
-/* count the number of chars in each string */
+
+	/*find length of vector + '\0' which makes it a 2d array*/
+	length = 0;
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
-			size++;
-		size++;
+			length++;
+		length++;
 	}
-	size++;
-/**
- * allocate memory of total number of
- * new line for each word
- */
-	strDup = malloc(sizeof(char) * size);
-	if (strDup == NULL)
+
+	str = malloc((length + 1) * sizeof(char));
+	if (str == NULL)
 		return (NULL);
+
 	k = 0;
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			strDup[k++] = av[i][j];
+			str[k] = av[i][j];
+			k++;
 		}
-		strDup[k++] = '\n';
+		str[k] = '\n';
+		k++;
 	}
-	strDup[k] = '\0';
-	return (strDup);
+	str[k] = '\0';
+
+	return (str);
 }
