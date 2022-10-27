@@ -1,1 +1,1 @@
- crack
+Bit manipulation
